@@ -2,7 +2,7 @@
 
 This repository contains a very basic Rails 5 app.
 
-The code contains many problems: please **identify** these problems and propose **fixes**.
+The code contains many problems: please **identify** these problems and **fix** them.
 
 # Startup
 
