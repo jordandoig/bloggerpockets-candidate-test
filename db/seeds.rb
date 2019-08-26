@@ -9,12 +9,12 @@
     Post.create!(title: Faker::Lorem.sentence.gsub(/\./, ""),
                  body: Faker::Lorem.paragraph,
                  user: user,
-                 published: true)
+                 published: [true, false].sample)
   end
 end
 
-Post.all.each do |post|
+Post.published.each do |post|
   2.times do
-    post.comments.create body: Faker::Lorem.sentence, user: User.all.sample, published: true
+    post.comments.create body: Faker::Lorem.sentence, user: User.all.sample, published: [true, false].sample
   end
 end

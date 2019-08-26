@@ -1,5 +1,4 @@
 <h1>Comments on <%= link_to @post.title, post_path(@post) %></h1>
-
 <ol>
   <% @comments.each do |comment| %>
     <li>
@@ -8,8 +7,9 @@
       - <%= link_to comment.user.name, user_path(comment.user) %>
     </li>
   <% end %>
-  <%# comment submission form %>
-  <%= form_with do %>
-    <%= text_field(:comment, :body) %>
-  <% end %>
 </ol>
+<h3>Add a Comment from a Random User on <%= link_to @post.title, post_path(@post) %></h3>
+<%= form_with do %>
+  <%= text_field(:comment, :body) %>
+<% end %>
+

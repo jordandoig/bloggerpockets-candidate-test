@@ -1,7 +1,7 @@
 <h1>Posts</h1>
 
 <div>
-  Sort by: <%= link_to "Newest first", posts_path(sort: :desc) %> | <%= link_to 'Oldest first', posts_path(sort: :asc) %>
+  Sort by: <%= link_to 'Newest first', posts_path(sort: :desc) %> | <%= link_to 'Oldest first', posts_path(sort: :asc) %>
 </div>
 
 <% @posts.each do |post| %>

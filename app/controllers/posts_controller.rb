@@ -2,7 +2,7 @@
 
 class PostsController < ApplicationController
   def index
-    @posts = Post.where(published: true)
+    @posts = Post.published
 
     if params[:sort].present?
       @posts = @posts.order("created_at #{params[:sort]}")
@@ -15,10 +15,5 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-  end
-
-  def comments
-    @post = Post.find(params[:id])
-    @comments = @post.comments
   end
 end

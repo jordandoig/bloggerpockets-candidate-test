@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   resources :posts do
-    get :comments, on: :member
+    resources :comments
   end
 
   resources :users

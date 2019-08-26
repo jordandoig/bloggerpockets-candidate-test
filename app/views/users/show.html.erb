@@ -2,8 +2,20 @@
 
 <p><%= link_to "View as JSON", user_path(@user, format: 'json') %></p>
 
-<ul>
-  <% @posts.each do |post| %>
-  <li><%= link_to post.title, post_path(post) %>
-  <% end %>
-</ul>
+<% if !@posts.empty? %>
+  <h3>Posts</h3>
+  <ul>
+    <% @posts.each do |post| %>
+      <li><%= link_to post.title, post_path(post) %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if !@drafts.empty? %>
+  <h3>Drafts</h3>
+  <ul>
+    <% @drafts.each do |draft| %>
+      <li><%= link_to draft.title, post_path(draft) %></li>
+    <% end %>
+  </ul>
+<% end %>
